@@ -1,5 +1,5 @@
 <template>
-    <div class="main-content shadow-md flex-1 p-8 ml-4 flex flex-col justify-around items-center rounded-xl ">
+    <div class="main-content shadow-md flex-1 pb-5 pr-5 ml-2 flex flex-col justify-around items-center rounded-xl ">
         <div class="mb-6 flex justify-end"> 
             <button v-if="isMobile" @click="$emit('toggle-view')" class="border rounded-full shadow-md p-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
@@ -9,18 +9,27 @@
             </button>
 
         </div>
-        <header class="mb-6 flex justify-around items-center flex-col w-1/2">
-            <div class="mb-6 flex items-center justify-between w-full">
-                <h1 class="text-2xl font-bold text-blue-500 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
-                    </svg>
+        <header class="flex justify-around items-center flex-col w-1/2">
+            <div class="mb-6 flex justify-between items-center w-full h-5">
+                <h1 class=" text-blue-500 flex items-center">
+                   
+                    <img width="25" class="mt-2" src="../../../assets/Group 1073714856.png" alt="">
     
-                    <span>Get Started</span> 
+                    <span class="font-bold text-2xl">
+                        Get Started
+                    </span> 
                 </h1>
-                <div class="flex flex-col">
-                    <span class="text-sm font-bold text-blue-500">You earned 20,500 XP</span>
-                    <span class="text-xs text-gray-500">Total XP Earned: 12,000</span>
+                <div class="flex justify-center items-center">
+
+                        <img width="40"src="../../../assets/stars.png" alt=""> 
+
+                    <div class="flex flex-col">
+                        <span class="text-sm font-bold text-blue-500 flex justify-center items-center">
+                            You earned 20,500 XP
+                        </span>
+                        <span style="font-size: 10px;line-height: 18px;font-weight: 700;letter-spacing: .2px;" class="text-gray-500">Total XP Earned: 12,000</span>
+
+                    </div>
                 </div>
 
             </div>
@@ -29,55 +38,58 @@
                 <div class="bg-blue-500 h-4 w-1/2 rounded-full"></div>
             </div>
         </header>
-        <section class="mb-8 p-10">
-            <div class="bg-white shadow rounded-xl p-6 mb-6 flex items-start justify-between flex-col">
+        <section class=" p-6">
+            <div class="bg-white shadow rounded-xl p-6 mb-6 flex items-start justify-between flex-col" id="inbox-details">
                 <div class="bg-gray-100 p-5 w-fit rounded-2xl flex flex-col justify-between items-start">
-                    <h2 class="my-2">Inbox name</h2>
-                    <input type="text" class="bg-white py-5 px-1 h-3 shadow-sm w-full" placeholder="Vivatech" id="">
-                    <h2 class="my-2">Inbox color</h2>
+                    <h3 class="my-2">Inbox Name</h3>
+                    <input type="text" class="bg-white py-4 px-1 shadow-sm w-full rounded-lg" placeholder="Vivatech" id="">
+                    <h4 class="my-2">Inbox Color</h4>
                     <div class="flex items-center justify-between py-4">
                         <template v-for="(icon, index) in inboxIcons" :key="index">
-                            <svg @click="showTooltip($event, icon.color)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" :stroke="icon.color" class="size-5 mx-3 hover:scale-150 transition-transform duration-200 ease-in-out  hover:cursor-pointer">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H6.911a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661Z" />
+                            <svg @click="showTooltip($event, icon.color)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :fill="icon.color" stroke-width="1.5" :stroke="icon.color" class="size-6 mx-3 hover:scale-150 transition-transform duration-200 ease-in-out  hover:cursor-pointer">
+                                <path fill-rule="evenodd" d="M6.912 3a3 3 0 0 0-2.868 2.118l-2.411 7.838a3 3 0 0 0-.133.882V18a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-4.162c0-.299-.045-.596-.133-.882l-2.412-7.838A3 3 0 0 0 17.088 3H6.912Zm13.823 9.75-2.213-7.191A1.5 1.5 0 0 0 17.088 4.5H6.912a1.5 1.5 0 0 0-1.434 1.059L3.265 12.75H6.11a3 3 0 0 1 2.684 1.658l.256.513a1.5 1.5 0 0 0 1.342.829h3.218a1.5 1.5 0 0 0 1.342-.83l.256-.512a3 3 0 0 1 2.684-1.658h2.844Z" clip-rule="evenodd" />
                             </svg>
+
                         </template>
                     </div>
                 </div>
                 <div class="flex justify-between items-center mt-4">
                     <div class="flex flex-col item-center justify-start w-fit">
                         <h3 class="text-l font-semibold my-2 flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 text-blue-500">
-                                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="mx-2 text-sm">Create more inbox</span>
+                            <img src="../../../assets/Subtract.png" alt="">
+                            <span id="more-inbox-title" class="mx-2">Create more inbox</span>
                         </h3>
-                        <p class="text-gray-500 text-sm ml-8">Create more inbox, welcome your new contact by a message</p>
+                        <p id="more-inbox-desc" class="text-gray-500 text-sm ml-8">Create more inbox, welcome your new contact by a message</p>
                     </div>
                     <button @click="openModal" class="flex items-center bg-white text-blue-500 rounded mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd" />
-                        </svg>
-                        500 XP
+                        <img src="../../../assets/Vector 2135.png" alt="">
+                        <span id="points">500 XP</span> 
                     </button>
                 </div>
             </div>
-            <div class="bg-white shadow rounded-xl p-6 flex items-center justify-between">
-                <div>
-                    <h3 class="text-l font-semibold my-2 flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 text-blue-500">
-                                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="mx-2 text-sm">Manage your messaging rules</span>
-                    </h3>
-                    <p class="text-gray-500 text-sm ml-8">Create more inbox, welcome your new contact by a message</p>
+            <div class="bg-white shadow rounded-xl p-6 flex items-start justify-between flex-col">
+                <div class="relative "> 
+                    <img src="../../../assets/Rectangle 921719.png" alt="">
+                    <img class="absolute" style="top: 50%;left: 50%;transform: translate(-50%,-50%);" src="../../../assets/Play button.png" alt="">
                 </div>
-                <button class="flex items-center bg-white text-blue-500 rounded mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-</svg>
+                <div class="flex items-center justify-between mt-2">
+                    <div class="">
+                        <h3 class="text-l font-semibold my-2 flex items-center">
+                            
+                            <img src="../../../assets/Subtract(1).png" alt="">
+                            <span id="more-inbox-title" class="mx-2">Manage your messaging rules</span>
+                        </h3>
+                        <p id="more-inbox-desc" class="text-gray-500 text-sm ml-8">Create more inbox, welcome your new contact by a message</p>
+                    </div>
+                    <button class="flex items-center bg-white text-blue-500 rounded mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+    </svg>
+    
+                       <span id="points">100 XP</span> 
+                    </button>
 
-                    100 XP
-                </button>
+                </div>
             </div>
         </section>
         <div v-if="tooltip.visible" :style="{ top: tooltip.top, left: tooltip.left }" class="tooltip">
@@ -88,8 +100,8 @@
                 <span class="tooltip-title">Vivatech</span>
             </div>
             <div class="tooltip-content">
-                <p>Hello <strong>{FirstName}</strong>,</p>
-                <p>It was a pleasure to meet you at Vivatech.</p>
+                <p>Hello <strong>{FirstName}</strong>,It was a</p>
+                <p> pleasure to meet you at Vivatech.</p>
             </div>
         </div>
 
@@ -114,13 +126,13 @@ export default {
     data() {
         return {
             inboxIcons: [
-                { color: 'red' },
-                { color: 'blue' },
-                { color: 'gray' },
-                { color: 'purple' },
-                { color: 'green' },
-                { color: 'orange' },
-                { color: 'yellow' }
+                { color: '#DB4CF4' },
+                { color: '#8057EC' },
+                { color: '#2864ED' },
+                { color: '#10BBE0' },
+                { color: '#EF3A00' },
+                { color: '#EFBB00' },
+                { color: '#93ADB2' }
             ],
             tooltip: {
                 visible: false,
@@ -187,10 +199,12 @@ export default {
 .tooltip-header {
     display: flex;
     align-items: center;
-    padding: 5px;
+    justify-content: center;
+    padding: 0px;
     border-radius: 20px;
     color: white;
-    width: 33%;
+    width: 120px;
+    height: 36px;
 }
 
 .tooltip-icon {
@@ -270,5 +284,37 @@ export default {
     border-radius: 15px;
     cursor: pointer;
     font-size: 1rem;
+}
+
+#more-inbox-title{
+    color: #514F5F;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+#more-inbox-desc{
+    color: #8C8D90;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 24px;
+}
+#points{
+    font-weight: 700;
+    font-size:16px;
+    line-height:24px;
+    text-align:Right;
+    margin-left: 8px;
+}
+
+#inbox-details{
+    color: #25213E;
+    font-weight: 700;
+
+}
+input{
+  text-indent: 10px;
+  color: #000;
+  font-weight: 600;
 }
 </style>

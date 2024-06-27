@@ -57,7 +57,9 @@ export default {
 .app-container {
   min-height: 100vh;
   padding: 8px;
-  font-family: "Inter", sans-serif;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   line-height: 16px;
   background: linear-gradient(to left, #e8eaf9 0%, #f1f1f9 100%);
 }
@@ -90,5 +92,5 @@ export default {
 </style>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 </style>
