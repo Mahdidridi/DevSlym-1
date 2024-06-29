@@ -1,5 +1,8 @@
 <template>
-  <div>
+  <div style="  background: url('https://slym.co/images/background.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:40% 60%;">
     <Navbar />
     <div :class="['app-container', isMobile ? 'mobile-view' : 'desktop-view']">
       <Sidebar 
@@ -56,12 +59,12 @@ export default {
 <style scoped>
 .app-container {
   min-height: 100vh;
-  padding: 8px;
+  padding: 0px 10px;
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   line-height: 16px;
-  background: linear-gradient(to left, #e8eaf9 0%, #f1f1f9 100%);
+  
 }
 
 .desktop-view {
@@ -73,7 +76,7 @@ export default {
 }
 
 .sidebar {
-  flex: 1;
+  flex: 1.12;
 }
 
 .main-content {
